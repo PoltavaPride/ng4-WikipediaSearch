@@ -1,0 +1,15 @@
+<header @headerAnimation>
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</header>
+
+<div @searchBarAnimation class="search-bar">
+  <input (input)="term$.next($event.target.value)" placeholder="Search...">
+</div>
+
+<ul>
+  <li *ngFor="let item of items | async"> {{ item }} </li>
+</ul>
+
+<router-outlet></router-outlet>
